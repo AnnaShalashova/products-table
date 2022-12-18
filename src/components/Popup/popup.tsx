@@ -8,7 +8,8 @@ const Popup = () => {
   const products = useAppSelector(({products}) => products.products);
   const selectedIdx = useAppSelector(({products}) => products.selected);
   const selectedProducts = products?.filter((p) => selectedIdx?.includes(p.id));
-  const selectedNames = selectedProducts?.map((p, idx) => idx === 0 ? p.name : `, ${p.name}`);
+  const selectedNames = selectedProducts?.map((p) => p.name);
+  const stringSelectedNames = selectedNames?.map((n, idx) => idx === 0 ? n : `, ${n}`)
   const isActive = useAppSelector(({popup}) => popup.active);
 
   const close = () => {
@@ -16,7 +17,8 @@ const Popup = () => {
   }
 
   const canselPost = async () => {
-   
+    close();
+    
     await fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
       body: JSON.stringify(selectedNames)
@@ -26,7 +28,6 @@ const Popup = () => {
         //для наглядности 
         dispatch(delProducts(selectedNames));   
         dispatch(delAllSelected()); 
-        close();
         console.log("Товары аннулированы", selectedNames);
       })
   }
@@ -38,7 +39,7 @@ const Popup = () => {
         <div className="modal-content">
           <p className="popup-question">Вы уверены, что хотите аннулировать товар(ы):</p>
           <p className="selected-name">
-            {selectedNames}
+            {stringSelectedNames}
           </p>
           <div className="btn-container">
             <button className="btn btn-popap btn-cancel" onClick={close} type="button">Отклонить</button>

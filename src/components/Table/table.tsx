@@ -58,7 +58,8 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {sortedProducts.map((product: IProduct, idx) => <TableRow key={idx} product={product} />)}
+                {sortedProducts.length ? sortedProducts.map((product: IProduct, idx) => <TableRow key={idx} product={product} />)
+                    : <p className="not-product-message">Товары не найдены!</p>}
                 </tbody>
             </table>
         )    
