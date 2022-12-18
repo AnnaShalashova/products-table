@@ -1,0 +1,10 @@
+.name-cell {
+    display: flex;
+    justify-content: left ;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.name-cell input {
+    margin-right: 8px !important;
+}

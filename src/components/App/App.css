@@ -1,0 +1,86 @@
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  color: #1a233b;
+
+  background-color: #4190fe2e;
+}
+
+label {
+  cursor: pointer;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button, input {
+  cursor: pointer;
+  border: 2px solid #215b8e;
+}
+
+button:hover {
+  box-shadow: 3px 3px 3px rgba(20, 30, 108, 0.469);
+  border: 2px solid rgba(20, 30, 108, 0.661)
+}
+
+input {
+  outline:none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  font: inherit;
+  color: rgba(20, 30, 108, 0.661);
+ 
+  border: 0.15em solid rgba(20, 30, 108, 0.661);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  background-color: rgba(20, 30, 108, 0.816) !important;
+
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.App {
+  display: block;
+  max-width: 1150px;
+  margin: auto;
+  padding: 40px;
+
+  border-radius: 15px;
+  background-color: #f7f7f9;
+  box-shadow: 0 25px 50px -12px rgba(20, 30, 108, 0.469);
+}
+

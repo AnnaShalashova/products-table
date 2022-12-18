@@ -1,0 +1,22 @@
+
+.delete-button {
+    margin-top: 15px;
+    width: 250px;
+    height: 50px;
+
+    border: 2px solid rgb(108, 103, 103);
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer {
+    margin-top: 30px;
+}
+

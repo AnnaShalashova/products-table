@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.choose-all {
+    display: flex;
+    align-items: center;
+}
+
+.choose-all  label {
+    margin-right: 10px;
+}
+
